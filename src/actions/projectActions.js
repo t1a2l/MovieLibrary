@@ -3,7 +3,7 @@ import axios from "axios";
 export const getMovies = (search, page) => {
   return dispatch => {
     return axios
-      .get(`http://www.omdbapi.com/?s=${search}&page=${page}&apikey=382c69b0`)
+      .get(`https://www.omdbapi.com/?s=${search}&page=${page}&apikey=382c69b0`)
       .then(result => {
         let newMovies;
         if (result.data.Error) {
@@ -24,7 +24,7 @@ export const getMovies = (search, page) => {
 export const getMovieData = movieId => {
   return dispatch => {
     axios
-      .get(`http://www.omdbapi.com/?i=${movieId}&apikey=382c69b0`)
+      .get(`https://www.omdbapi.com/?i=${movieId}&apikey=382c69b0`)
       .then(res => res.data)
       .then(res => {
         let movieObj = {
